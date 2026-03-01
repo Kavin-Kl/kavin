@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar.astro";
   <h1 id="hero-name" class="text-4xl mb-2 heading-highlight">kavin kl</h1>
   <p id="hero-subtitle" class="text-zinc-500 mb-6">20 y/o cs undergrad</p>
 
+  <div id="main-content">
   <p class="mb-4">
    currently turning random ideas into working prototypes.
   </p>
@@ -86,8 +87,7 @@ import Navbar from "../components/Navbar.astro";
   <p class="mt-8 text-zinc-500">
    aside from this, i also like travelling and to talk bout philosphy
   </p>
-
-
+  </div>
 
   <div class="grid grid-cols-3 gap-4 mt-8">
     <div class="h-40 bg-zinc-800 rounded-xl">
@@ -169,6 +169,7 @@ import Navbar from "../components/Navbar.astro";
       const img1 = document.getElementById("gallery-img-1");
       const img2 = document.getElementById("gallery-img-2");
       const img3 = document.getElementById("gallery-img-3");
+      const mainContent = document.getElementById("main-content");
 
       // scroll to top first
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -194,6 +195,17 @@ import Navbar from "../components/Navbar.astro";
         if (img1) img1.setAttribute("src", "/misba (1).jpeg");
         if (img2) img2.setAttribute("src", "/misba (2).jpeg");
         if (img3) img3.setAttribute("src", "/misba (3).jpeg");
+
+        if (mainContent) {
+          const lyrics =
+            "Tum tak, tum tak, tum tak, sohne yaar\n" +
+            "Tum tak, tum tak, tum tak, sohne yaar\n" +
+            "Tum tak, tum tak, arzi meri, phir aage jo marzi\n" +
+            "Tum tak, tum tak arzi meri, phir teri jo marzi\n" +
+            "Meri har dushwaari bas tum tak";
+          mainContent.textContent = lyrics;
+          mainContent.classList?.add("whitespace-pre-line", "leading-relaxed");
+        }
 
         if (feedback) feedback.textContent = "message delivered.";
       }, 300);

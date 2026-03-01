@@ -7,3 +7,14 @@ html:not(.light) .heading-highlight {
 html.light .heading-highlight {
   color: #000000;
 }
+
+/* Make gray body text darker in light mode so it stays readable */
+html.light .text-zinc-400,
+html.light .text-zinc-500,
+html.light .text-zinc-600 {
+  color: #27272a; /* roughly zinc-800 */
+}
+
+html.light .text-stone-200 {
+  color: #1c1917; /* roughly stone-900 */
+}

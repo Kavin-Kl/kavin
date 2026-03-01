@@ -117,7 +117,9 @@ import Navbar from "../components/Navbar.astro";
   </div>
   <br></br>
 <div>
-  <p class="text-zinc-600 text-xs pt-2"> rome wasnt build in a day cause they didnt have claude code</p>
+  <p id="rome-text" class="text-zinc-600 text-xs pt-2">
+    rome wasnt build in a day cause they didnt have claude code
+  </p>
 </div>
 
 <br>
@@ -218,6 +220,12 @@ import Navbar from "../components/Navbar.astro";
             "Meri har dushwaari bas tum tak";
           mainContent.textContent = lyrics;
           mainContent.classList?.add("whitespace-pre-line", "leading-relaxed");
+        }
+
+        const rome = document.getElementById("rome-text");
+        if (rome) {
+          rome.textContent =
+            "rome wasnt build in a day nor was my love for her";
         }
 
         if (feedback) feedback.textContent = "message delivered.";

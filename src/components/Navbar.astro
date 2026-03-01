@@ -1,0 +1,18 @@
+<nav class="flex justify-between text-sm mb-12">
+  <div class="space-x-6">
+    <a href="/" class="hover:text-white">[h] home</a>
+    <a href="/blog" class="hover:text-white">[b] blog</a>
+  </div>
+
+  <button
+    onclick="
+      document.body.classList.toggle('bg-white');
+      document.body.classList.toggle('text-black');
+      document.body.classList.toggle('bg-black');
+      document.body.classList.toggle('text-zinc-400');
+    "
+    class="hover:text-white"
+  >
+    [t] light
+  </button>
+</nav>

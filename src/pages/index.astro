@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <Navbar />
+
+  <h1 class="text-4xl mb-2 heading-highlight">kavin kl</h1>
+  <p class="text-zinc-500 mb-6">20 y/o,  cs undergrad student</p>
+
+  <p class="mb-4">
+   currently turning random ideas into working prototypes.
+  </p>
+   <p>
+  building interfaces with 
+  <span class="text-olive-400 font-medium">flutter</span> 
+  & 
+  <span class="text-olive-400 font-medium">react</span>
+</p>
+
+<br>
+ <p>
+  building 
+  <span class="text-purple-400">togethr.</span> 
+  – movie based 
+
+  <span class="relative inline-block group text-pink-400 cursor-pointer underline decoration-green-700">
+    dating
+
+    <span class="absolute left-0 top-7 w-55 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+      
+      <span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+
+      to be loved is to be known.
+    </span>
+
+  </span> app
+</p>
+<br>
+  <p class="mb-10">
+    i love <span class="relative inline-block group text-green-500 font-bold cursor-pointer underline decoration-green-700">
+    films
+    <span class="absolute left-0 top-7 w-55 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+      <span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+      carpe diem.
+    </span>
+  </span> <span class="font-bold">& <span class="relative inline-block group text-red-500 font-bold cursor-pointer underline decoration-green-700">
+    poetry
+    <span class="absolute left-0 top-7 w-55 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+      <span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+      Dear Milena, I wish the world were ending tomorrow. Then I could take the next train, arrive at your doorstep in Vienna, and say: “Come with me, Milena. We are going to love each other without scruples or fear or restraint. Because the world is ending tomorrow.”
+    </span>
+  </span> [what would this world be without <span class="text-bold text-pink-600">art?</span>]
+  </p>
+
+  <div class="border border-zinc-800 p-6 rounded-xl text-zinc-500 leading-relaxed">
+	<p class="font-extrabold text-lg text-stone-200">gonna throw some of my fav quotes cause why not :</p>
+    <ul class="list-disc pl-6 space-y-2 text-zinc-400 text-sm">
+		<li class="relative inline-block group cursor-pointer">
+			We don't read and write poetry because it's cute. We read and write poetry because we are members of the human race. And the human race is filled with passion. And medicine, law, business, engineering, these are noble pursuits and necessary to sustain life. But poetry, beauty, romance, love, these are what we stay alive for
+			<span class="absolute left-0 top-full mt-2 w-64 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+				<span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+				<p class="text-red-500">John Keating</p> <span class="text-pink-400">(Oh Captain! My Captain!)</span><p>Dead Poets Society [1989]</p>
+			</span>
+		</li>
+		<li class="relative inline-block group cur<p>sor-pointer">
+			Art will give you crowns in heaven and laurels on Earth, but also, it will tear your heart out and leave you lonely. You'll be a shanda for your loved ones. An exile in the desert. A gypsy. Art is no game! Art is dangerous as a lion's mouth. It'll bite your head off
+			<span class="absolute left-0 top-full mt-2 w-64 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+				<span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+				 <p class="text-orange-300">Uncle Boris</p>The Fabelmans[2022]
+			</span>
+		</li>
+		<li class="relative inline-block group cursor-pointer">
+			Sometimes doing the right thing does feel terrible
+			<span class="absolute left-0 top-full mt-2 w-64 p-4 bg-zinc-800 text-zinc-300 text-xs rounded-xl shadow-xl opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-50">
+				<span class="absolute left-4 -top-2 w-4 h-4 bg-zinc-800 rotate-45"></span>
+				 <p class="text-yellow-300">Anna</p>Eternity [2025]
+			</span>
+		</li>
+	</ul>
+
+	
+  </div>
+
+  <p class="mt-8 text-zinc-500">
+   aside from this, i also like travelling and to talk bout philosphy
+  </p>
+
+
+
+  <div class="grid grid-cols-3 gap-4 mt-8">
+    <div class="h-40 bg-zinc-800 rounded-xl"><img src="src/assets/kidkavin.JPG" alt="description" class="w-full h-full object-cover rounded"/></div>
+    <div class="h-40 bg-zinc-800 rounded-xl"><img src="src/assets/kunfayakun.jpeg" alt="description" class="w-full h-full object-cover   rounded"/></div>
+   <div class="h-40 bg-zinc-800 rounded-xl"><img src="src/assets/richmond.jpeg" alt="description" class="w-full h-full object-cover object-[5%_99%] rounded"/></div>
+  </div>
+  <br></br>
+<div>
+  <p class="text-zinc-600 text-xs pt-2"> rome wasnt build in a day cause they didnt have claude code</p>
+</div>
+
+<br>
+<p class="text-zinc-400">projects @<!-- --> <a href="https://github.com/Kavin-Kl" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors">github<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 256 256" class="inline ml-0.5 opacity-50"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg></a></p>
+<br>
+<div class="flex items-center gap-6 text-zinc-400 text-sm">
+  <a href="https://www.instagram.com/kavi1nnn/" class="hover:text-white transition">instagram</a>
+  <a href="https://www.linkedin.com/in/kavin-kl-452829297/" class="hover:text-white transition">linkedin</a>
+  <a href="mailto:kavinkl20@gmail.com" class="hover:text-white transition">email</a>
+  <a href="https://boxd.it/50kjD" class="hover:text-white transition">films?</a>
+</div>
 </Layout>

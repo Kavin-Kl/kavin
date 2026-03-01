@@ -1,23 +1,34 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+
+const { title = "Home" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+
+  <body class="bg-black text-zinc-400 font-mono min-h-screen transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-6 py-10">
+      <slot />
+    </div>
+
+    <script>
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "h") window.location.href = "/";
+        if (e.key === "b") window.location.href = "/blog";
+        if (e.key === "t") {
+          document.documentElement.classList.toggle("light");
+          document.body.classList.toggle("bg-white");
+          document.body.classList.toggle("text-black");
+          document.body.classList.toggle("bg-black");
+          document.body.classList.toggle("text-zinc-400");
+        }
+      });
+    </script>
+  </body>
+</html>

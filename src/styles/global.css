@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html:not(.light) .heading-highlight {
+  color: #ffffff;
+}
+
+html.light .heading-highlight {
+  color: #000000;
+}

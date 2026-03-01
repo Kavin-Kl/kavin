@@ -171,6 +171,19 @@ import Navbar from "../components/Navbar.astro";
       const img3 = document.getElementById("gallery-img-3");
       const mainContent = document.getElementById("main-content");
 
+      // play tt.mp3 when the special words are present
+      try {
+        // @ts-ignore
+        let audio = window._ttAudio;
+        if (!audio) {
+          audio = new Audio("/tt.mp3");
+          // @ts-ignore
+          window._ttAudio = audio;
+        }
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      } catch {}
+
       // scroll to top first
       window.scrollTo({ top: 0, behavior: "smooth" });
 

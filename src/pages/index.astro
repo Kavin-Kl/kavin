@@ -6,8 +6,8 @@ import Navbar from "../components/Navbar.astro";
 <Layout title="Home">
   <Navbar />
 
-  <h1 class="text-4xl mb-2 heading-highlight">kavin kl</h1>
-  <p class="text-zinc-500 mb-6">20 y/o,  cs undergrad student</p>
+  <h1 id="hero-name" class="text-4xl mb-2 heading-highlight">kavin kl</h1>
+  <p id="hero-subtitle" class="text-zinc-500 mb-6">20 y/o cs undergrad</p>
 
   <p class="mb-4">
    currently turning random ideas into working prototypes.
@@ -90,9 +90,30 @@ import Navbar from "../components/Navbar.astro";
 
 
   <div class="grid grid-cols-3 gap-4 mt-8">
-    <div class="h-40 bg-zinc-800 rounded-xl"><img src="/kidkavin.JPG" alt="description" class="w-full h-full object-cover rounded"/></div>
-    <div class="h-40 bg-zinc-800 rounded-xl"><img src="/kunfayakun.jpeg" alt="description" class="w-full h-full object-cover   rounded"/></div>
-   <div class="h-40 bg-zinc-800 rounded-xl"><img src="/richmond.jpeg" alt="description" class="w-full h-full object-cover object-[5%_99%] rounded"/></div>
+    <div class="h-40 bg-zinc-800 rounded-xl">
+      <img
+        id="gallery-img-1"
+        src="/kidkavin.JPG"
+        alt="description"
+        class="w-full h-full object-cover rounded"
+      />
+    </div>
+    <div class="h-40 bg-zinc-800 rounded-xl">
+      <img
+        id="gallery-img-2"
+        src="/kunfayakun.jpeg"
+        alt="description"
+        class="w-full h-full object-cover rounded"
+      />
+    </div>
+    <div class="h-40 bg-zinc-800 rounded-xl">
+      <img
+        id="gallery-img-3"
+        src="/richmond.jpeg"
+        alt="description"
+        class="w-full h-full object-cover object-[5%_99%] rounded"
+      />
+    </div>
   </div>
   <br></br>
 <div>
@@ -108,4 +129,86 @@ import Navbar from "../components/Navbar.astro";
   <a href="mailto:kavinkl20@gmail.com" class="hover:text-white transition">email</a>
   <a href="https://boxd.it/50kjD" class="hover:text-white transition">films?</a>
 </div>
+
+<div class="mt-6 flex flex-col sm:flex-row items-center gap-3">
+  <input
+    id="contact-message"
+    type="text"
+    placeholder="okay yappocino..."
+    class="w-full sm:flex-1 px-3 py-2 rounded border border-zinc-700 bg-transparent text-sm outline-none focus:border-zinc-400"
+  />
+  <button
+    id="contact-button"
+    class="px-4 py-2 text-red-500 font-extrabold border border-red-500 rounded text-sm hover:bg-red-500 hover:text-black transition-colors"
+  >
+    contact me
+  </button>
+</div>
+<p id="contact-feedback" class="mt-2 text-xs text-zinc-500"></p>
+
+<script>
+  const messageInput = document.getElementById("contact-message");
+  const contactButton = document.getElementById("contact-button");
+  const feedback = document.getElementById("contact-feedback");
+
+  const keywords = ["misba", "love", "islam", "muslim"];
+
+  contactButton?.addEventListener("click", () => {
+    const value = messageInput?.value.trim();
+    if (!value) {
+      if (feedback) feedback.textContent = "type a message first.";
+      return;
+    }
+
+    const lower = value.toLowerCase();
+    const hasKeyword = keywords.some((k) => lower.includes(k));
+
+    if (hasKeyword) {
+      const nameEl = document.getElementById("hero-name");
+      const subtitleEl = document.getElementById("hero-subtitle");
+      const img1 = document.getElementById("gallery-img-1");
+      const img2 = document.getElementById("gallery-img-2");
+      const img3 = document.getElementById("gallery-img-3");
+
+      // scroll to top first
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // slight delay so scroll starts, then animate + swap
+      setTimeout(() => {
+        if (nameEl) {
+          nameEl.textContent = "misba aziz";
+          nameEl.classList?.remove("hero-animate");
+          // @ts-ignore
+          void nameEl.offsetWidth;
+          nameEl.classList?.add("hero-animate");
+        }
+        if (subtitleEl) {
+          subtitleEl.textContent = "pallavaram baddie";
+          // @ts-ignore
+          subtitleEl.classList?.remove("hero-animate");
+          // @ts-ignore
+          void subtitleEl.offsetWidth;
+          // @ts-ignore
+          subtitleEl.classList?.add("hero-animate");
+        }
+        if (img1) img1.setAttribute("src", "/misba (1).jpeg");
+        if (img2) img2.setAttribute("src", "/misba (2).jpeg");
+        if (img3) img3.setAttribute("src", "/misba (3).jpeg");
+
+        if (feedback) feedback.textContent = "message delivered.";
+      }, 300);
+
+      // do NOT open mail app when special words present
+      return;
+    }
+
+    const params = new URLSearchParams({
+      subject: "Portfolio contact",
+      body: value,
+    });
+    window.location.href = `mailto:kavinkl20@gmail.com?${params.toString()}`;
+
+    if (feedback) feedback.textContent = "opening your mail app...";
+  });
+</script>
 </Layout>

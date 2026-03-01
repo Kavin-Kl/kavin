@@ -19,6 +19,15 @@ const { title = "Home" } = Astro.props;
 
     <script>
       window.addEventListener("keydown", (e) => {
+        const target = e.target;
+        if (
+          target instanceof HTMLInputElement ||
+          target instanceof HTMLTextAreaElement ||
+          (target && target.isContentEditable)
+        ) {
+          return;
+        }
+
         if (e.key === "h") window.location.href = "/";
         if (e.key === "b") window.location.href = "/blog";
         if (e.key === "t") {

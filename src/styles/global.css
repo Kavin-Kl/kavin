@@ -18,3 +18,22 @@ html.light .text-zinc-600 {
 html.light .text-stone-200 {
   color: #1c1917; /* roughly stone-900 */
 }
+
+.hero-animate {
+  animation: heroPop 0.7s ease-out;
+}
+
+@keyframes heroPop {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

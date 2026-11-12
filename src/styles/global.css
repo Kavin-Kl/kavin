@@ -37,3 +37,21 @@ html.light .text-stone-200 {
     opacity: 1;
   }
 }
+/* accent fonts for highlighted words */
+.font-serif-it {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 1.3em;
+  line-height: 1;
+}
+
+.font-hand {
+  font-family: "Caveat", "Bradley Hand", cursive;
+  font-size: 1.45em;
+  line-height: 1;
+}
+
+html.light .text-zinc-200,
+html.light .text-zinc-300 {
+  color: #18181b;
+}
